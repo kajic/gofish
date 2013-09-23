@@ -155,7 +155,6 @@ func (me *Batch) run(group bool) {
 
 	if group {
 		stats, err := me.stats()
-		fmt.Println("time", time.Now().Sub(t))
 		if err != nil {
 			fmt.Println(err)
 		}
@@ -165,4 +164,5 @@ func (me *Batch) run(group bool) {
 	} else {
 		me.plain()
 	}
+	fmt.Println("time", time.Now().Sub(t))
 }
