@@ -8,7 +8,6 @@ import (
 	"sort"
 	"strconv"
 	"strings"
-	"time"
 
 	"github.com/kajic/gofish/geonames"
 )
@@ -151,8 +150,6 @@ func (me *Batch) plain() error {
 }
 
 func (me *Batch) run(group bool) {
-	t := time.Now()
-
 	if group {
 		stats, err := me.stats()
 		if err != nil {
@@ -164,5 +161,4 @@ func (me *Batch) run(group bool) {
 	} else {
 		me.plain()
 	}
-	fmt.Println("time", time.Now().Sub(t))
 }

@@ -34,7 +34,6 @@ $ ./gofish -batch.points points.txt
 2 Sweden
 1 United States
 1 Germany
-time 5.403775ms
 ```
 
 Reverse without grouping:
@@ -45,7 +44,6 @@ $ ./gofish -batch.points points.txt -batch.group=false
 59.3277 18.0087 Sweden
 52.5206 13.4026 Germany
 47.625 -122.515 United States
-time 5.577933ms
 ```
 
 As advertised at http://twofishes.net the performance is at least 1000 reversals/s. I've even seen it come close to 2000 reversals/s.
