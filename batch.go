@@ -107,12 +107,11 @@ func (me *Batch) enqueue() (int, error) {
 }
 
 func (me *Batch) collect(jobsCount int, callback func(*ReverseResult)) {
-Perform:
 	for ; jobsCount > 0; jobsCount-- {
 		select {
 		case reverseResult, ok := <-me.countryc:
 			if !ok {
-				break Perform
+				return
 			}
 			callback(reverseResult)
 		case err := <-me.errc:
